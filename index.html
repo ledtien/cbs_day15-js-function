@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <title>Bai tap JS buoi 5</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-secondary" role="alert">
+        <h1 class="alert-heading">Bảng tính điểm thi</h1>
+        <hr />
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span
+              class="input-group-text bg-warning"
+              id="inputGroup-sizing-default"
+              >Điểm chuẩn:</span
+            >
+          </div>
+          <input
+            id="diemChuan"
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text px-4" id="inputGroup-sizing-default"
+              >Điểm thi:</span
+            >
+          </div>
+          <input
+            id="diemThi"
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+          />
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col">
+            <h3>Khu vực ưu tiên:</h3>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="khuVuc"
+                id="khuVucX"
+                value="x"
+                checked
+              />
+              <label class="form-check-label" for="khuVucX">
+                Không ưu tiên
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="khuVuc"
+                id="khuVucA"
+                value="a"
+              />
+              <label class="form-check-label" for="khuVucA"> Khu vực A </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="khuVuc"
+                id="khuVucB"
+                value="b"
+              />
+              <label class="form-check-label" for="khuVucB"> Khu vực B </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="khuVuc"
+                id="khuVucC"
+                value="c"
+              />
+              <label class="form-check-label" for="khuVucC"> Khu vực C </label>
+            </div>
+          </div>
+          <div class="col">
+            <h3>Đối tượng ưu tiên:</h3>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="doiTuong"
+                id="doiTuong0"
+                value="0"
+                checked
+              />
+              <label class="form-check-label" for="doiTuong0">
+                Không ưu tiên
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="doiTuong"
+                id="doiTuong1"
+                value="1"
+              />
+              <label class="form-check-label" for="doiTuong1">
+                Đối tượng 1
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="doiTuong"
+                id="doiTuong2"
+                value="2"
+              />
+              <label class="form-check-label" for="doiTuong2">
+                Đối tượng 2
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="doiTuong"
+                id="doiTuong3"
+                value="3"
+              />
+              <label class="form-check-label" for="doiTuong3">
+                Đối tượng 3
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <button id="btnResult" type="button" class="btn btn-primary btn-lg">
+          Kết quả
+        </button>
+        <h4
+          id="result"
+          role="alert"
+          class="alert alert-danger text-success mt-3"
+        >
+          (...)
+        </h4>
+      </div>
+      <!-- ============================= -->
+      <div class="border rounded mt-5">
+        <div class="container">
+          <h1>Tiền điện</h1>
+
+          <form>
+            <div class="form-group text-secondary">
+              <label for="hoVaTen">Họ và tên</label>
+              <input
+                type="text"
+                class="form-control"
+                id="hoVaTen"
+                placeholder="Họ và tên"
+              />
+            </div>
+            <div class="form-group text-secondary">
+              <label for="kwDien">Số Kw tiêu thụ</label>
+              <input
+                type="number"
+                class="form-control"
+                id="kwDien"
+                placeholder="(Kw)"
+              />
+            </div>
+          </form>
+          <button id="tienDienBtn" type="button" class="btn btn-warning">
+            Tính tiền
+          </button>
+          <div id="tienDienTxt" class="alert alert-info mt-3" role="alert">
+            (...)
+          </div>
+        </div>
+      </div>
+      <!-- ============================= -->
+      <div class="border rounded mt-5">
+        <div class="container">
+          <h1>Thuế thu nhập cá nhân</h1>
+
+          <form>
+            <div class="form-group text-secondary">
+              <label for="hoVaTenThue">Họ và tên</label>
+              <input
+                type="text"
+                class="form-control"
+                id="hoVaTenThue"
+                placeholder="Họ và tên"
+              />
+            </div>
+            <div class="form-group text-secondary">
+              <label for="tongThuNhap">Tổng thu nhập năm</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tongThuNhap"
+                placeholder="(VND)"
+              />
+            </div>
+            <div class="form-group text-secondary">
+              <label for="nguoiPhuThuoc">Số người phụ thuộc</label>
+              <input
+                type="number"
+                class="form-control"
+                id="nguoiPhuThuoc"
+                placeholder="(người)"
+              />
+            </div>
+          </form>
+          <button id="tienThueBtn" type="button" class="btn btn-warning">
+            Tính thuế
+          </button>
+          <div id="tienThueTxt" class="alert alert-warning mt-3" role="alert">
+            (...)
+          </div>
+        </div>
+      </div>
+      <!-- ============================= -->
+      <div class="alert alert-secondary mt-5" role="alert">
+        <h1 class="alert-heading">Tính tiền cáp</h1>
+        <hr />
+        <form>
+          <div class="form-group text-secondary">
+            <label for="maKhachHang">Mã Khách hàng</label>
+            <input
+              type="text"
+              class="form-control"
+              id="maKhachHang"
+              placeholder="Mã khách hàng"
+            />
+            <hr />
+          </div>
+          <div class="text-secondary mb-2">Loại Khách hàng</div>
+          <div class="form-check form-check-inline mb-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="loaiKhach"
+              id="caNhan"
+              value="caNhan"
+              onclick="hide()"
+            />
+            <label class="form-check-label" for="caNhan">Cá nhân</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="loaiKhach"
+              id="doanhNghiep"
+              value="doanhNghiep"
+              onclick="show()"
+            />
+            <label class="form-check-label" for="doanhNghiep"
+              >Doanh nghiệp:</label
+            >
+          </div>
+          <div id="ketNoiInput" class="form-group text-secondary">
+            <label for="ketNoi">Số kết nối</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ketNoi"
+              placeholder="(số kết nối)"
+            />
+          </div>
+
+          <hr />
+
+          <div class="form-group text-secondary">
+            <label for="soKenh">Số kênh</label>
+            <input
+              type="number"
+              class="form-control"
+              id="soKenh"
+              placeholder="(kênh)"
+            />
+          </div>
+        </form>
+
+        <button id="tienCapBtn" type="button" class="btn btn-warning">
+          Tính tiền cáp
+        </button>
+        <div id="tienCapTxt" class="alert alert-warning mt-3" role="alert">
+          (...)
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/diemThi.js"></script>
+    <script src="./assets/js/tienDien.js"></script>
+    <script src="./assets/js/tienThue.js"></script>
+    <script src="./assets/js/tienCap.js"></script>
+  </body>
+</html>
